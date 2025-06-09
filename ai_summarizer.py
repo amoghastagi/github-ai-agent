@@ -1,7 +1,11 @@
 import openai
 import os
+from dotenv import load_dotenv
+
+load_dotenv()  # load from .env
 
 client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
 
 def summarize_issue(title, body):
     prompt = f"""
